@@ -5,21 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Drop Game</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, #FFC907 0%, #2E9DF7 100%); box-shadow: 0 2px 8px #2E9DF733;">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-primary" href="#game-section" style="font-size: 1.5rem;">💧 Water Drop Game</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #131313;">
+                Menu
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end menu-locale" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#game-section">Game</a></li>
+                <li><a class="dropdown-item" href="#about-section">About</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <button class="dropdown-item locale-btn" id="ltr-btn" type="button" aria-label="Switch to left-to-right layout">LTR (English)</button>
+                </li>
+                <li>
+                  <button class="dropdown-item locale-btn" id="rtl-btn" type="button" aria-label="Switch to right-to-left layout">RTL (العربية)</button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="game-section">
+    <div class="main-center-row">
+    <aside class="charity-facts left-facts" aria-label="charity: water facts left">
+        <div class="fact" tabindex="0">
+            <h2>💧 1 in 10</h2>
+            <p>people worldwide lack access to clean water. Together, we can change that.</p>
+        </div>
+        <div class="fact" tabindex="0">
+            <h2>🌍 100% Model</h2>
+            <p>100% of public donations fund clean water projects, bringing hope to communities.</p>
+        </div>
+    </aside>
     <div class="game-wrapper">
         <h1 class="game-title">Water Drop</h1>
         <p class="game-tagline">Catch the good drops, avoid the bad ones!</p>
         <div class="score-panel">
             <div class="score">Score: <span id="score">0</span></div>
             <div class="timer">Time: <span id="time">30</span>s</div>
-            <button id="start-btn">Start Game</button>
+            <button id="start-btn">▶️ Start Game</button>
+            <button id="pause-btn">⏸️ Pause</button>
+            <button id="restart-btn">🔄 Restart</button>
+            <button id="reset-btn">🧹 Reset</button>
         </div>
         
         <div id="game-container">
         </div>
+        <div class="logo-bar">
+            <img src="img/cw_logo-horizontal.png" alt="charity: water logo" class="cw-logo">
+        </div>
+        <div class="can-bar">
+            <img src="img/water-can.png" alt="Water Can" class="can" id="can1">
+            <img src="img/water-can-transparent.png" alt="Water Can" class="can" id="can2">
+        </div>
     </div>
-    
+    <aside class="charity-facts right-facts" aria-label="charity: water facts right">
+        <div class="fact" tabindex="0">
+            <h2>🚰 17.4M+</h2>
+            <p>people now have clean water thanks to charity: water supporters like you!</p>
+        </div>
+        <div class="fact" tabindex="0">
+            <h2>🌟 Hope Flows</h2>
+            <p>Every drop you help collect brings health, education, and opportunity to families.</p>
+        </div>
+    </aside>
+    </div>
+    </div>
+    <section id="about-section" class="about-section mt-5 mb-0 pt-4 pb-0" tabindex="0" aria-label="About charity: water and this game">
+      <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+        <h2 class="fw-bold text-primary mb-3">About This Game &amp; charity: water</h2>
+        <p class="lead text-center mb-4" style="max-width: 700px;">Water Drop is inspired by charity: water’s mission to bring clean, safe water to people in need. Play, learn, and help spread hope—every drop counts!</p>
+      </div>
+      <div class="about-gradient-bar mt-4" style="width: 100vw; min-height: 220px; position: relative; overflow: visible !important; display: flex; justify-content: center; align-items: flex-end;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.92) 60%, rgba(46,157,247,0.18) 100%); backdrop-filter: blur(8px) saturate(1.1); -webkit-backdrop-filter: blur(8px) saturate(1.1);"></div>
+        <div class="about-gradient-bar-img-wrapper">
+          <img src="img/Screenshot 2025-06-08 at 9.12.44 PM.png" alt="charity: water subbrands" style="position: relative; z-index: 2; display: block; margin: 0 auto 24px auto; max-width: 420px; width: 80vw; border-radius: 16px; box-shadow: 0 2px 12px #2E9DF733; background: rgba(255,255,255,0.92);">
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+      document.getElementById('ltr-btn').addEventListener('click', function() {
+        document.body.setAttribute('dir', 'ltr');
+        document.body.lang = 'en';
+      });
+      document.getElementById('rtl-btn').addEventListener('click', function() {
+        document.body.setAttribute('dir', 'rtl');
+        document.body.lang = 'ar';
+      });
+    </script>
 </body>
 </html>
