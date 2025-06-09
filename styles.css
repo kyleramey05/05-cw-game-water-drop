@@ -127,6 +127,12 @@ body {
     transition: transform 0.1s, box-shadow 0.2s;
     box-shadow: 0 2px 12px #2E9DF7AA;
     border: 2px solid #fff;
+    top: -60px;
+}
+@keyframes dropFall {
+  0% { top: -60px; opacity: 0.9; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0.7; }
 }
 .water-drop:hover {
     transform: scale(1.13) rotate(-8deg);
@@ -498,4 +504,26 @@ body {
   background: linear-gradient(90deg, #4FCB53 0%, #FFC907 100%) !important;
   color: #fff !important;
   outline: 2px solid #FFC907;
+}
+
+.score-change-msg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.7s, top 0.7s;
+  text-shadow: 0 2px 8px #fff, 0 0 2px #2E9DF7;
+}
+.score-change-msg.good {
+  color: #4FCB53;
+  text-shadow: 0 2px 8px #fff, 0 0 2px #2E9DF7;
+}
+.score-change-msg.bad {
+  color: #F5402C;
+  text-shadow: 0 2px 8px #fff, 0 0 2px #FFC907;
 }
